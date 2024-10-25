@@ -7,14 +7,18 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #1a2a3a; /* Deep Blue Background */
+      color: #fff; /* White Text */
       margin: 20px;
-      color: #333;
     }
     h1 {
       text-align: center;
-      color: #2c3e50;
+      color: #f39c12; /* Bright Orange */
       margin-bottom: 20px;
+      font-size: 36px;
+    }
+    h2, h3 {
+      color: #f39c12; /* Bright Orange for headings */
     }
     ul {
       list-style-type: none;
@@ -25,34 +29,32 @@
     }
     a {
       text-decoration: none;
-      color: #3498db;
+      color: #fff; /* White links */
       font-weight: bold;
       transition: color 0.3s ease;
     }
     a:hover {
-      color: #e74c3c;
+      color: #00bfff; /* Neon Blue Hover Effect */
     }
     .about {
-      background-color: #fff;
+      background-color: #000; /* Black background for contrast */
+      color: #fff; /* White text */
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-bottom: 40px;
     }
     .about h2 {
-      color: #2c3e50;
-    }
-    .about p {
-      color: #555;
+      color: #f39c12; /* Orange heading */
     }
     footer {
       text-align: center;
       margin-top: 50px;
-      color: #777;
+      color: #f39c12; /* Bright Orange for footer */
     }
     #fun-fact {
       font-style: italic;
-      color: #555;
+      color: #00bfff; /* Neon Blue for fun facts */
       margin-top: 20px;
     }
   </style>
@@ -73,11 +75,67 @@
       document.getElementById('greeting').innerText = greeting;
     }
 
-    // Fun facts rotation
+    // Fun facts rotation every 15 minutes (900000 milliseconds)
     const facts = [
-      'The global data analytics market is projected to reach $275 billion by 2026.',
-      'The average career of a professional athlete is just 3-5 years.',
-      'Data-driven decision making can improve business productivity by 5-6%.'
+      // Arts and Music Facts
+      'The "Mona Lisa" has no eyebrows — it was the fashion in Renaissance Florence to shave them off.',
+      'Vincent van Gogh only sold one painting during his lifetime, "The Red Vineyard."',
+      'Pablo Picasso produced an estimated 50,000 artworks during his lifetime.',
+      'The "Starry Night" by Van Gogh was painted from his asylum room in Saint-Rémy-de-Provence.',
+      'The Beatles hold the record for the most No. 1 hits on the Billboard Hot 100, with 20 songs.',
+      'The world’s most expensive painting ever sold is "Salvator Mundi" by Leonardo da Vinci, auctioned for $450 million.',
+      'The guitar riff in The Rolling Stones’ "Satisfaction" came to Keith Richards in a dream.',
+      'Beyoncé is the most-awarded female artist at the Grammys, with 28 Grammy Awards.',
+      'David Bowie’s real name was David Jones, but he changed it to avoid confusion with Davy Jones of The Monkees.',
+      '"The Dark Side of the Moon" by Pink Floyd stayed on the Billboard charts for 741 weeks straight.',
+      
+      // Literature and Authors Facts
+      'J.K. Rowling was rejected by 12 publishers before Harry Potter was published.',
+      'Ernest Hemingway survived two plane crashes in two consecutive days.',
+      'Agatha Christie is the world’s best-selling fiction author, with over 2 billion copies sold.',
+      'Mark Twain was born shortly after Halley’s Comet appeared and predicted he would "go out with it" — he died the day after it returned.',
+      'The shortest story ever written is by Ernest Hemingway: "For sale: baby shoes, never worn."',
+      'Dr. Seuss wrote "Green Eggs and Ham" after being challenged to write a book with fewer than 50 different words.',
+      'F. Scott Fitzgerald’s "The Great Gatsby" sold poorly in his lifetime — only about 20,000 copies by the time of his death.',
+      'Jane Austen only made £600 from her writing during her lifetime.',
+      'George Orwell’s real name was Eric Arthur Blair.',
+      'Harper Lee published "To Kill a Mockingbird" in 1960, but her second novel wasn’t released until 2015.',
+      
+      // Movies and TV Facts
+      'The movie "Psycho" was the first film to show a flushing toilet.',
+      'The first TV commercial in the U.S. was for Bulova watches in 1941.',
+      'The longest-running TV show of all time is "The Simpsons," with over 700 episodes.',
+      'James Cameron’s "Titanic" and "Avatar" are the two highest-grossing films of all time.',
+      'The "Wilhelm scream" is a stock sound effect that’s been used in over 400 movies.',
+      '"Gone with the Wind" holds the record for the most tickets sold for a movie in U.S. history.',
+      'Tom Hanks’ character in "Forrest Gump" was originally supposed to be played by John Travolta.',
+      'In the "Toy Story" movies, Woody was originally supposed to be a ventriloquist dummy.',
+      'The lightsaber sound in "Star Wars" was created by combining the hum of an old projector and a TV set.',
+      'The snow in "The Wizard of Oz" was made from asbestos.',
+      
+      // Random Interesting Facts
+      'A "jiffy" is an actual unit of time — it refers to 1/100th of a second.',
+      'Wombat poop is cube-shaped to prevent it from rolling away.',
+      'Bananas are berries, but strawberries aren’t.',
+      'Sharks existed before trees did, by about 50 million years.',
+      'Octopuses have three hearts and blue blood.',
+      'The Eiffel Tower can grow more than 6 inches taller in the summer due to metal expansion.',
+      'Cleopatra lived closer in time to the first moon landing than to the building of the Great Pyramid.',
+      'There are more stars in the universe than grains of sand on all of Earth’s beaches.',
+      'In Japan, it’s considered rude to tip.',
+      'The Guinness Book of World Records was created to settle arguments in pubs.',
+      
+      // Music, Movies, and Cultural Figures (Extended)
+      'Kurt Cobain named the band Nirvana because he wanted a name that was "beautiful or nice" instead of something mean.',
+      'Madonna is the best-selling female recording artist of all time, with over 300 million records sold.',
+      'The "Star Wars" score was composed by John Williams, who has been nominated for more Academy Awards than any other living person.',
+      'Leonardo DiCaprio’s mom named him after Leonardo da Vinci because she was looking at a da Vinci painting when she felt him kick for the first time.',
+      'Marilyn Monroe was reportedly a bookworm, owning over 400 books in her personal library.',
+      'Freddie Mercury had a four-octave vocal range.',
+      'Tom Cruise is known for doing many of his own stunts, including hanging off the side of a plane in "Mission: Impossible – Rogue Nation."',
+      'The sound of the dinosaur roars in "Jurassic Park" was created by mixing tiger, alligator, and whale sounds.',
+      'The "Back to the Future" script was rejected 40 times before it was finally accepted.',
+      'Michael Jackson’s iconic moonwalk was first performed during a performance of "Billie Jean" in 1983.'
     ];
 
     let factIndex = 0;
@@ -89,7 +147,8 @@
 
     window.onload = function() {
       greetUser();
-      setInterval(displayNextFact, 5000); // Change fact every 5 seconds
+      displayNextFact(); // Display the first fact immediately
+      setInterval(displayNextFact, 900000); // Change fact every 15 minutes
     }
   </script>
 </head>
@@ -100,11 +159,11 @@
 
   <div class="about">
     <h2>About Me</h2>
-    <p>Hello! I'm Tyler Trussell, a business student at Arizona State University with a deep passion for data analytics, economics, and sports. My projects mainly focus on data analytics for the Global Career Accelerator, where I apply analytical tools to solve real-world problems and optimize processes. I enjoy diving into data to find actionable insights that drive decision-making.</p>
+        <p>Hello! I'm Tyler Trussell, a business student at Arizona State University with a deep passion for data analytics, economics, and sports. My projects mainly focus on data analytics for the Global Career Accelerator, where I apply analytical tools to solve real-world problems and optimize processes. I enjoy diving into data to find actionable insights that drive decision-making.</p>
     <p>Check out my other site focused on creative writing and articles: <a href="https://trusinho.wixsite.com/thetrus" target="_blank">TheTrus</a>.</p>
     <p>Feel free to connect with me via email:</p>
-    <a href="mailto:tyltrus@gmail.com" style="display:inline-block;background-color:#2ecc71;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">Contact Me at tyltrus@gmail.com</a>
-    <a href="mailto:tjtrusse@asu.edu" style="display:inline-block;background-color:#2ecc71;color:white;padding:10px 20px;text-decoration:none;border-radius:5px; margin-left: 10px;">Contact Me at tjtrusse@asu.edu</a>
+    <a href="mailto:tyltrus@gmail.com" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px;">Contact Me at tyltrus@gmail.com</a>
+    <a href="mailto:tjtrusse@asu.edu" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px; margin-left: 10px;">Contact Me at tjtrusse@asu.edu</a>
   </div>
 
   <ul>
@@ -128,3 +187,4 @@
   </footer>
 </body>
 </html>
+
