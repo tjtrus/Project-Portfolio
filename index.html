@@ -50,28 +50,75 @@
       margin-top: 50px;
       color: #777;
     }
+    #fun-fact {
+      font-style: italic;
+      color: #555;
+      margin-top: 20px;
+    }
   </style>
+  <!-- Add scripts for interactivity -->
+  <script>
+    // Greeting based on time of day
+    function greetUser() {
+      const now = new Date();
+      const hours = now.getHours();
+      let greeting;
+      if (hours < 12) {
+        greeting = "Good morning!";
+      } else if (hours < 18) {
+        greeting = "Good afternoon!";
+      } else {
+        greeting = "Good evening!";
+      }
+      document.getElementById('greeting').innerText = greeting;
+    }
+
+    // Fun facts rotation
+    const facts = [
+      'The global data analytics market is projected to reach $275 billion by 2026.',
+      'The average career of a professional athlete is just 3-5 years.',
+      'Data-driven decision making can improve business productivity by 5-6%.'
+    ];
+
+    let factIndex = 0;
+
+    function displayNextFact() {
+      document.getElementById('fun-fact').innerText = facts[factIndex];
+      factIndex = (factIndex + 1) % facts.length;
+    }
+
+    window.onload = function() {
+      greetUser();
+      setInterval(displayNextFact, 5000); // Change fact every 5 seconds
+    }
+  </script>
 </head>
 <body>
   <h1>Tyler Trussell's PDF Projects</h1>
-  
+
+  <h2 id="greeting"></h2> <!-- Personalized greeting -->
+
   <div class="about">
     <h2>About Me</h2>
-    <p>Hello! I'm Tyler Trussell, and I'm passionate about [mention your academic focus, career goals, or hobbies]. This site is a collection of my projects from various courses and personal work, primarily focusing on [supply chain, data analysis, etc.]. Feel free to browse through the projects, and if you have any questions, don't hesitate to reach out!</p>
+    <p>Hello! I'm Tyler Trussell, a business student at Arizona State University with a deep passion for data analytics, economics, and sports. My projects mainly focus on data analytics for the Global Career Accelerator, where I apply analytical tools to solve real-world problems and optimize processes. I enjoy diving into data to find actionable insights that drive decision-making.</p>
+    <p>On this site, you'll find some of my academic and personal projects. Feel free to explore and check out what I've been working on. If you have any questions or would like to connect, feel free to reach out!</p>
   </div>
-  
+
   <ul>
-    <li><a href="Copy of Milestone 1_ Solution Sheet Tyler Trussell (1).pdf" target="_blank">Project 1</a></li>
-    <li><a href="Milestone 2_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 2</a></li>
-    <li><a href="Milestone 3_Tyler Trussell (1).pdf" target="_blank">Project 3</a></li>
-    <li><a href="Milestone 4_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 4</a></li>
-    <li><a href="Milestone5_ SolutionSheet_Tyler_Trussell (1).pdf" target="_blank">Project 5</a></li>
-    <li><a href="Milestone 6_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 6</a></li>
-    <li><a href="Milestone 7_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 7</a></li>
-    <li><a href="Milestone 10_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 8</a></li>
-    <li><a href="GameJet Microtransactions Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 9</a></li>
-    <li><a href="Intel Portfolio Project_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank">Project 10</a></li>
+    <li><a href="Copy of Milestone 1_ Solution Sheet Tyler Trussell (1).pdf" target="_blank" title="Project 1 - Data Analytics for Global Career Accelerator">Project 1</a></li>
+    <li><a href="Milestone 2_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 2 - Data Analytics for Global Career Accelerator">Project 2</a></li>
+    <li><a href="Milestone 3_Tyler Trussell (1).pdf" target="_blank" title="Project 3 - Data Analytics for Global Career Accelerator">Project 3</a></li>
+    <li><a href="Milestone 4_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 4 - Data Analytics for Global Career Accelerator">Project 4</a></li>
+    <li><a href="Milestone5_ SolutionSheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 5 - Data Analytics for Global Career Accelerator">Project 5</a></li>
+    <li><a href="Milestone 6_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 6 - Data Analytics for Global Career Accelerator">Project 6</a></li>
+    <li><a href="Milestone 7_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 7 - Data Analytics for Global Career Accelerator">Project 7</a></li>
+    <li><a href="Milestone 10_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 8 - Data Analytics for Global Career Accelerator">Project 8</a></li>
+    <li><a href="GameJet Microtransactions Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 9 - Data Analytics for Global Career Accelerator">Project 9</a></li>
+    <li><a href="Intel Portfolio Project_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 10 - Data Analytics for Global Career Accelerator">Project 10</a></li>
   </ul>
+
+  <h3>Fun Fact</h3>
+  <p id="fun-fact">The global data analytics market is projected to reach $275 billion by 2026.</p>
 
   <footer>
     <p>&copy; 2024 Tyler Trussell. All rights reserved.</p>
