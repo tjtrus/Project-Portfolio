@@ -4,38 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tyler Trussell's PDF Projects</title>
+  
+  <!-- Lightbox CSS for PDF viewing -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #1a2a3a; /* Deep Blue Background */
       color: #fff; /* White Text */
       margin: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out; /* Fade-in effect */
     }
+
+    body.loaded {
+      opacity: 1;
+    }
+
     h1 {
       text-align: center;
       color: #f39c12; /* Bright Orange */
       margin-bottom: 20px;
       font-size: 36px;
     }
+
     h2, h3 {
       color: #f39c12; /* Bright Orange for headings */
     }
+
     ul {
       list-style-type: none;
       padding: 0;
     }
+
     li {
       margin: 10px 0;
     }
+
     a {
       text-decoration: none;
       color: #fff; /* White links */
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease; /* Hover animation */
     }
+
     a:hover {
       color: #00bfff; /* Neon Blue Hover Effect */
+      transform: scale(1.1); /* Slight zoom on hover */
     }
+
     .about {
       background-color: #000; /* Black background for contrast */
       color: #fff; /* White text */
@@ -44,23 +62,134 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-bottom: 40px;
     }
+
     .about h2 {
       color: #f39c12; /* Orange heading */
     }
+
     footer {
       text-align: center;
       margin-top: 50px;
       color: #f39c12; /* Bright Orange for footer */
     }
+
     #fun-fact {
       font-style: italic;
       color: #00bfff; /* Neon Blue for fun facts */
       margin-top: 20px;
     }
-  </style>
 
+    /* Dark Theme */
+    .dark-theme {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .dark-theme a {
+      color: #00bfff; /* Neon Blue for Dark Theme */
+    }
+
+    .dark-theme a:hover {
+      color: #f39c12; /* Orange hover on Dark Theme */
+    }
+
+    .dark-theme .about {
+      background-color: #1a2a3a; /* Darker background for about section */
+      color: #fff;
+    }
+
+    .dark-theme footer {
+      color: #00bfff; /* Neon blue for footer in dark theme */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tyler Trussell's PDF Projects</h1>
+
+  <!-- Theme switcher button -->
+  <button onclick="toggleTheme()" style="background-color: #f39c12; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Switch Theme</button>
+
+  <h2 id="greeting"></h2> <!-- Personalized greeting -->
+
+  <div class="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Tyler Trussell, a business student at Arizona State University with a deep passion for data analytics, economics, and sports. My projects mainly focus on data analytics for the Global Career Accelerator, where I apply analytical tools to solve real-world problems and optimize processes. I enjoy diving into data to find actionable insights that drive decision-making.</p>
+    <p>Check out my other site focused on creative writing and articles: <a href="https://trusinho.wixsite.com/thetrus" target="_blank">TheTrus</a>.</p>
+    
+    <!-- Contact buttons -->
+    <p>Feel free to connect with me via email:</p>
+    <a href="mailto:tyltrus@gmail.com" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px;">Contact Me at tyltrus@gmail.com</a>
+    <a href="mailto:tjtrusse@asu.edu" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px; margin-left: 10px;">Contact Me at tjtrusse@asu.edu</a>
+    
+    <!-- Spotify Playlist -->
+    <iframe src="https://open.spotify.com/playlist/0FRy27SEgYPmKFkya6JF85?si=JuhvPImrRGa5aG15wiJz2Q" width="300" height="380" frameborder="0" allow="encrypted-media"></iframe>
+    <p>You can shuffle this playlist for a random song from my favorite tracks!</p>
+  </div>
+
+  <!-- Social Media Share Buttons -->
+  <p>Share this site:</p>
+  <a href="https://twitter.com/intent/tweet?text=Check out Tyler's portfolio!&url=https://your-site-url.com" target="_blank">
+    <img src="twitter-icon.png" alt="Twitter" width="30px">
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://your-site-url.com&title=Check out Tyler's portfolio!" target="_blank">
+    <img src="linkedin-icon.png" alt="LinkedIn" width="30px">
+  </a>
+  <a href="https://www.instagram.com/yourprofile" target="_blank">
+    <img src="instagram-icon.png" alt="Instagram" width="30px">
+  </a>
+
+  <!-- PDF Projects with Lightbox -->
+  <ul>
+    <li><a href="Copy of Milestone 1_ Solution Sheet Tyler Trussell (1).pdf" data-lightbox="projects" title="Project 1">Project 1</a></li>
+    <li><a href="Milestone 2_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 2">Project 2</a></li>
+    <li><a href="Milestone 3_Tyler Trussell (1).pdf" data-lightbox="projects" title="Project 3">Project 3</a></li>
+    <li><a href="Milestone 4_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 4">Project 4</a></li>
+    <li><a href="Milestone5_ SolutionSheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 5">Project 5</a></li>
+    <li><a href="Milestone 6_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 6">Project 6</a></li>
+    <li><a href="Milestone 7_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 7">Project 7</a></li>
+    <li><a href="Milestone 10_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 8">Project 8</a></li>
+    <li><a href="GameJet Microtransactions Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 9">Project 9</a></li>
+    <li><a href="Intel Portfolio Project_ Solution Sheet_Tyler_Trussell (1).pdf" data-lightbox="projects" title="Project 10">Project 10</a></li>
+  </ul>
+
+  <!-- Random Quote Section -->
+  <h3>Inspiration of the Day</h3>
+  <p id="quote"></p>
+
+  <h3>Fun Fact</h3>
+  <p id="fun-fact">The global data analytics market is projected to reach $275 billion by 2026.</p>
+
+  <!-- Acknowledgments Section (Accordion Style) -->
+  <div>
+    <button onclick="toggleAcknowledgment()">Acknowledgments</button>
+    <div id="acknowledgment" style="display: none;">
+      <p>Thanks to:</p>
+      <ul>
+        <li>Ianne, my instructor for the Global Career Accelerator</li>
+        <li>My mother for fostering my love for music</li>
+        <li>The Strokes for the color inspiration</li>
+        <li>Friends for getting me into site creation</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Tyler Trussell. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Theme Toggle Script -->
   <script>
-    // Greeting based on time of day
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+  </script>
+
+  <!-- Greeting based on time of day -->
+  <script>
     function greetUser() {
       const now = new Date();
       const hours = now.getHours();
@@ -74,68 +203,35 @@
       }
       document.getElementById('greeting').innerText = greeting;
     }
+  </script>
 
-    // Fun facts rotation every 15 minutes (900000 milliseconds)
+  <!-- Random Quote Generator -->
+  <script>
+    var quotes = [
+      "Creativity takes courage. - Henri Matisse",
+      "Art is the lie that enables us to realize the truth. - Pablo Picasso",
+      "Without music, life would be a mistake. - Friedrich Nietzsche",
+      "Music expresses that which cannot be put into words. - Victor Hugo",
+      "To live a creative life, we must lose our fear of being wrong. - Joseph Chilton Pearce",
+      "Imagination creates reality. - Richard Wagner",
+      "The purpose of art is washing the dust of daily life off our souls. - Pablo Picasso",
+      "Art enables us to find ourselves and lose ourselves at the same time. - Thomas Merton"
+    ];
+
+    document.getElementById('quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+  </script>
+
+  <!-- Fun Fact Rotation -->
+  <script>
     const facts = [
-      // Arts and Music Facts
       'The "Mona Lisa" has no eyebrows — it was the fashion in Renaissance Florence to shave them off.',
       'Vincent van Gogh only sold one painting during his lifetime, "The Red Vineyard."',
-      'Pablo Picasso produced an estimated 50,000 artworks during his lifetime.',
-      'The "Starry Night" by Van Gogh was painted from his asylum room in Saint-Rémy-de-Provence.',
-      'The Beatles hold the record for the most No. 1 hits on the Billboard Hot 100, with 20 songs.',
-      'The world’s most expensive painting ever sold is "Salvator Mundi" by Leonardo da Vinci, auctioned for $450 million.',
-      'The guitar riff in The Rolling Stones’ "Satisfaction" came to Keith Richards in a dream.',
-      'Beyoncé is the most-awarded female artist at the Grammys, with 28 Grammy Awards.',
-      'David Bowie’s real name was David Jones, but he changed it to avoid confusion with Davy Jones of The Monkees.',
-      '"The Dark Side of the Moon" by Pink Floyd stayed on the Billboard charts for 741 weeks straight.',
-      
-      // Literature and Authors Facts
       'J.K. Rowling was rejected by 12 publishers before Harry Potter was published.',
-      'Ernest Hemingway survived two plane crashes in two consecutive days.',
-      'Agatha Christie is the world’s best-selling fiction author, with over 2 billion copies sold.',
-      'Mark Twain was born shortly after Halley’s Comet appeared and predicted he would "go out with it" — he died the day after it returned.',
-      'The shortest story ever written is by Ernest Hemingway: "For sale: baby shoes, never worn."',
-      'Dr. Seuss wrote "Green Eggs and Ham" after being challenged to write a book with fewer than 50 different words.',
-      'F. Scott Fitzgerald’s "The Great Gatsby" sold poorly in his lifetime — only about 20,000 copies by the time of his death.',
-      'Jane Austen only made £600 from her writing during her lifetime.',
-      'George Orwell’s real name was Eric Arthur Blair.',
-      'Harper Lee published "To Kill a Mockingbird" in 1960, but her second novel wasn’t released until 2015.',
-      
-      // Movies and TV Facts
-      'The movie "Psycho" was the first film to show a flushing toilet.',
       'The first TV commercial in the U.S. was for Bulova watches in 1941.',
-      'The longest-running TV show of all time is "The Simpsons," with over 700 episodes.',
-      'James Cameron’s "Titanic" and "Avatar" are the two highest-grossing films of all time.',
-      'The "Wilhelm scream" is a stock sound effect that’s been used in over 400 movies.',
-      '"Gone with the Wind" holds the record for the most tickets sold for a movie in U.S. history.',
-      'Tom Hanks’ character in "Forrest Gump" was originally supposed to be played by John Travolta.',
-      'In the "Toy Story" movies, Woody was originally supposed to be a ventriloquist dummy.',
-      'The lightsaber sound in "Star Wars" was created by combining the hum of an old projector and a TV set.',
-      'The snow in "The Wizard of Oz" was made from asbestos.',
-      
-      // Random Interesting Facts
-      'A "jiffy" is an actual unit of time — it refers to 1/100th of a second.',
-      'Wombat poop is cube-shaped to prevent it from rolling away.',
-      'Bananas are berries, but strawberries aren’t.',
-      'Sharks existed before trees did, by about 50 million years.',
       'Octopuses have three hearts and blue blood.',
       'The Eiffel Tower can grow more than 6 inches taller in the summer due to metal expansion.',
       'Cleopatra lived closer in time to the first moon landing than to the building of the Great Pyramid.',
-      'There are more stars in the universe than grains of sand on all of Earth’s beaches.',
-      'In Japan, it’s considered rude to tip.',
-      'The Guinness Book of World Records was created to settle arguments in pubs.',
-      
-      // Music, Movies, and Cultural Figures (Extended)
-      'Kurt Cobain named the band Nirvana because he wanted a name that was "beautiful or nice" instead of something mean.',
-      'Madonna is the best-selling female recording artist of all time, with over 300 million records sold.',
-      'The "Star Wars" score was composed by John Williams, who has been nominated for more Academy Awards than any other living person.',
-      'Leonardo DiCaprio’s mom named him after Leonardo da Vinci because she was looking at a da Vinci painting when she felt him kick for the first time.',
-      'Marilyn Monroe was reportedly a bookworm, owning over 400 books in her personal library.',
-      'Freddie Mercury had a four-octave vocal range.',
-      'Tom Cruise is known for doing many of his own stunts, including hanging off the side of a plane in "Mission: Impossible – Rogue Nation."',
-      'The sound of the dinosaur roars in "Jurassic Park" was created by mixing tiger, alligator, and whale sounds.',
-      'The "Back to the Future" script was rejected 40 times before it was finally accepted.',
-      'Michael Jackson’s iconic moonwalk was first performed during a performance of "Billie Jean" in 1983.'
+      'There are more stars in the universe than grains of sand on all of Earth’s beaches.'
     ];
 
     let factIndex = 0;
@@ -149,42 +245,17 @@
       greetUser();
       displayNextFact(); // Display the first fact immediately
       setInterval(displayNextFact, 900000); // Change fact every 15 minutes
+      document.body.classList.add('loaded'); // For page fade-in effect
     }
   </script>
-</head>
-<body>
-  <h1>Tyler Trussell's PDF Projects</h1>
 
-  <h2 id="greeting"></h2> <!-- Personalized greeting -->
+  <!-- Acknowledgments Toggle Script -->
+  <script>
+    function toggleAcknowledgment() {
+      var ack = document.getElementById("acknowledgment");
+      ack.style.display = ack.style.display === "none" ? "block" : "none";
+    }
+  </script>
 
-  <div class="about">
-    <h2>About Me</h2>
-        <p>Hello! I'm Tyler Trussell, a business student at Arizona State University with a deep passion for data analytics, economics, and sports. My projects mainly focus on data analytics for the Global Career Accelerator, where I apply analytical tools to solve real-world problems and optimize processes. I enjoy diving into data to find actionable insights that drive decision-making.</p>
-    <p>Check out my other site focused on creative writing and articles: <a href="https://trusinho.wixsite.com/thetrus" target="_blank">TheTrus</a>.</p>
-    <p>Feel free to connect with me via email:</p>
-    <a href="mailto:tyltrus@gmail.com" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px;">Contact Me at tyltrus@gmail.com</a>
-    <a href="mailto:tjtrusse@asu.edu" style="display:inline-block;background-color:#f39c12;color:#000;padding:10px 20px;text-decoration:none;border-radius:5px; margin-left: 10px;">Contact Me at tjtrusse@asu.edu</a>
-  </div>
-
-  <ul>
-    <li><a href="Copy of Milestone 1_ Solution Sheet Tyler Trussell (1).pdf" target="_blank" title="Project 1 - Data Analytics for Global Career Accelerator">Project 1</a></li>
-    <li><a href="Milestone 2_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 2 - Data Analytics for Global Career Accelerator">Project 2</a></li>
-    <li><a href="Milestone 3_Tyler Trussell (1).pdf" target="_blank" title="Project 3 - Data Analytics for Global Career Accelerator">Project 3</a></li>
-    <li><a href="Milestone 4_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 4 - Data Analytics for Global Career Accelerator">Project 4</a></li>
-    <li><a href="Milestone5_ SolutionSheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 5 - Data Analytics for Global Career Accelerator">Project 5</a></li>
-    <li><a href="Milestone 6_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 6 - Data Analytics for Global Career Accelerator">Project 6</a></li>
-    <li><a href="Milestone 7_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 7 - Data Analytics for Global Career Accelerator">Project 7</a></li>
-    <li><a href="Milestone 10_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 8 - Data Analytics for Global Career Accelerator">Project 8</a></li>
-    <li><a href="GameJet Microtransactions Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 9 - Data Analytics for Global Career Accelerator">Project 9</a></li>
-    <li><a href="Intel Portfolio Project_ Solution Sheet_Tyler_Trussell (1).pdf" target="_blank" title="Project 10 - Data Analytics for Global Career Accelerator">Project 10</a></li>
-  </ul>
-
-  <h3>Fun Fact</h3>
-  <p id="fun-fact">The global data analytics market is projected to reach $275 billion by 2026.</p>
-
-  <footer>
-    <p>&copy; 2024 Tyler Trussell. All rights reserved.</p>
-  </footer>
 </body>
 </html>
-
