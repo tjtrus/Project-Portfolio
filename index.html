@@ -225,31 +225,70 @@
 
   <!-- Fun Fact Rotation -->
   <script>
-    const facts = [
-      'The "Mona Lisa" has no eyebrows — it was the fashion in Renaissance Florence to shave them off.',
-      'Vincent van Gogh only sold one painting during his lifetime, "The Red Vineyard."',
-      'J.K. Rowling was rejected by 12 publishers before Harry Potter was published.',
-      'The first TV commercial in the U.S. was for Bulova watches in 1941.',
-      'Octopuses have three hearts and blue blood.',
-      'The Eiffel Tower can grow more than 6 inches taller in the summer due to metal expansion.',
-      'Cleopatra lived closer in time to the first moon landing than to the building of the Great Pyramid.',
-      'There are more stars in the universe than grains of sand on all of Earth’s beaches.'
-    ];
+  const facts = [
+    // Sports Facts
+    'The Olympic Games were originally a religious festival held in honor of the Greek god Zeus.',
+    'The fastest recorded tennis serve was clocked at 163.7 mph by Sam Groth in 2012.',
+    'The FIFA World Cup is the most-watched sporting event in the world, with billions tuning in every four years.',
+    'Michael Phelps has won more Olympic medals than 161 countries combined.',
+    'The longest recorded boxing match lasted 110 rounds and took place in 1893.',
+    'Baseball originated from the British game called "rounders."',
+    'The longest tennis match in history lasted 11 hours and 5 minutes, played by John Isner and Nicolas Mahut in 2010.',
+    'Formula 1 cars generate enough downforce to drive upside down on the ceiling if they go fast enough.',
+    'The Tour de France covers a distance of approximately 2,200 miles, roughly equivalent to driving from Los Angeles to New York.',
+    'Basketball was invented in 1891 by Dr. James Naismith, who used peach baskets as hoops.',
 
-    let factIndex = 0;
+    // Music Facts
+    'Beethoven continued to compose music even after he went completely deaf.',
+    'The shortest song ever recorded is "You Suffer" by Napalm Death, lasting just 1.316 seconds.',
+    '"Bohemian Rhapsody" by Queen was the first music video ever made.',
+    'The Beatles hold the record for the most #1 hits on the Billboard Hot 100 chart, with 20 songs.',
+    'Elvis Presley’s "Hound Dog" was a cover song originally sung by blues singer Big Mama Thornton.',
+    'Mozart wrote his first symphony when he was just eight years old.',
+    'The world’s largest grand piano weighs 1.4 tons and was built by a 15-year-old in New Zealand.',
+    'The “Happy Birthday” song is copyrighted, making it one of the most expensive songs to perform in movies.',
+    'Pink Floyd’s “The Dark Side of the Moon” spent 957 weeks on the Billboard charts.',
+    'Bob Dylan won the Nobel Prize in Literature in 2016 for his impactful songwriting.',
 
-    function displayNextFact() {
-      document.getElementById('fun-fact').innerText = facts[factIndex];
-      factIndex = (factIndex + 1) % facts.length;
-    }
+    // Literature Facts
+    'The longest novel ever written is "In Search of Lost Time" by Marcel Proust, containing over 1.2 million words.',
+    'Dr. Seuss’s “Green Eggs and Ham” uses only 50 different words.',
+    'Agatha Christie is the best-selling novelist of all time, with over 2 billion copies sold.',
+    'The oldest surviving written work is "The Epic of Gilgamesh," dating back to 2100 BCE.',
+    'J.R.R. Tolkien wrote the entirety of "The Lord of the Rings" by hand.',
+    'Shakespeare is credited with inventing over 1,700 words used in the English language today.',
+    '"Don Quixote" by Miguel de Cervantes is considered the first modern novel.',
+    'Charles Dickens’ “A Tale of Two Cities” has sold over 200 million copies, making it one of the best-selling books of all time.',
+    'F. Scott Fitzgerald’s “The Great Gatsby” wasn’t a success until after his death.',
+    '“The Hobbit” was initially written by J.R.R. Tolkien as a bedtime story for his children.',
 
-    window.onload = function() {
-      greetUser();
-      displayNextFact(); // Display the first fact immediately
-      setInterval(displayNextFact, 900000); // Change fact every 15 minutes
-      document.body.classList.add('loaded'); // For page fade-in effect
-    }
-  </script>
+    // General Fun Facts
+    'A day on Venus is longer than a year on Venus due to its slow rotation.',
+    'The word "nerd" was first coined by Dr. Seuss in his book *If I Ran the Zoo*.',
+    'Honey never spoils; edible honey was found in ancient Egyptian tombs.',
+    'Bananas are berries, but strawberries are not.',
+    'The inventor of the Pringles can, Fred Baur, had his ashes buried in a Pringles can.',
+    'A group of flamingos is called a "flamboyance."',
+    'Octopuses have three hearts and blue blood.',
+    'Humans and bananas share about 60% of their DNA.',
+    'The Eiffel Tower can grow more than 6 inches taller in the summer due to metal expansion.',
+    'You’re more likely to be killed by a vending machine than a shark.'
+  ];
+
+  let factIndex = 0;
+
+  function displayNextFact() {
+    document.getElementById('fun-fact').innerText = facts[factIndex];
+    factIndex = (factIndex + 1) % facts.length;
+  }
+
+  window.onload = function() {
+    greetUser();
+    displayNextFact(); // Display the first fact immediately
+    setInterval(displayNextFact, 10000); // Change fact every 10 seconds
+    document.body.classList.add('loaded'); // For page fade-in effect
+  }
+</script>
 
   <!-- Acknowledgments Toggle Script -->
   <script>
